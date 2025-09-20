@@ -64,7 +64,7 @@ body {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #fff;
+    background-color: #333;
     margin-bottom: 5px;
     transition: transform 0.3s ease-in-out;
 }
@@ -77,11 +77,34 @@ section {
 }
 
 /* Estilo para o cabeçalho */
-header {
-    background-color: #ffc10786; /* Cor de fundo azul */
-    color: #333; /* Cor do texto */
-    padding: 50px;
-    text-align: center;
+/* Container que alinha o texto e a imagem lado a lado */
+.header-content {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 50px; /* Adiciona um espaço entre o texto e a imagem */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    text-align: left; /* Alinha o texto à esquerda dentro do seu contêiner */
+}
+
+/* Estilo para a imagem do mascote no cabeçalho */
+.mascote-header {
+    max-width: 600px; /* Define um tamanho máximo para a imagem */
+    height: auto;
+}
+
+/* Ajuste o alinhamento de texto para o contêiner de texto */
+.header-text {
+    max-width: 500px; /* Limita a largura do bloco de texto para não ficar muito largo */
+}
+
+/* Remova os estilos antigos do cabeçalho que podem causar conflito */
+header img {
+    /* Remova este estilo pois o novo `.mascote-header` já o substitui */
+    display: flex;
+    justify-content: left;
+    max-width: 150px;
+    height: auto;
 }
 
 /* Estilo para a imagem do cabeçalho (logo) */
@@ -165,9 +188,48 @@ section li {
     font-size: 16px;
 }
 
-/* Cores de fundo alternadas para as seções */
+
+/* Estilos para a seção Problema */
 #problema {
+    display: flex; /* Transforma a seção em um contêiner flexível */
+    flex-direction: column; /* Organiza o título acima do conteúdo principal */
+    align-items: center; /* Centraliza o título */
+    padding: 0px 50px;
     background-color: #e9ecef;
+}
+
+#problema h3 {
+    width: 100%; /* Permite que o título ocupe a largura total */
+    text-align: center; /* Centraliza o texto do título */
+    margin-bottom: 10px;
+}
+
+.problema-content {
+    display: flex;
+    align-items: center; /* Alinha a imagem e o texto verticalmente */
+    justify-content: center; /* Centraliza o bloco de conteúdo */
+    gap: 40px; /* Espaço entre a imagem e o texto */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    max-width: 1200px; /* Limita a largura do conteúdo para melhor leitura */
+    width: 100%;
+}
+
+.mascote-problema {
+    max-width: 400px; /* Ajuste o tamanho do mascote conforme necessário */
+    height: auto;
+    border-radius: 10px; /* Se quiser bordas arredondadas */
+}
+
+.problema-text {
+    text-align: left; /* Alinha o texto à esquerda dentro de seu próprio contêiner */
+    flex: 1; /* Permite que o texto ocupe o espaço restante */
+    min-width: 300px; /* Largura mínima para o bloco de texto */
+}
+
+.problema-text ul {
+    list-style: disc; /* Para ter marcadores de lista */
+    margin-left: 20px; /* Indenta a lista */
+    text-align: left;
 }
 
 /* Estilos para a seção de Objetivo */
@@ -270,76 +332,100 @@ section li {
     background-color: #e0a8004e;
 }
 
+/* Estilos para a nova seção de Contato com formulário */
 #contato {
     background-color: #ffffff;
+    padding: 80px 50px;
 }
 
-#contato h3 {
-    margin-bottom: 40px;
-}
-
-.contato-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.contato-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
     text-align: left;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-footer .contato-icon-circle {
-    background-color: #007bff;
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.contato-info h4 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.contato-info p {
-    margin: 0;
-    font-size: 1em;
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
     color: #555;
 }
 
-.contato-mapa {
-    margin-top: 50px;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Garante que padding e border não alterem a largura total */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #e0a800;
+    outline: none;
+}
+
+.btn-cta-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #e0a800;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta-submit:hover {
+    background-color: #ffc107;
 }
 
 /* Estilo para a seção de Equipe (com fotos) */
+#equipe {
+    background-color: #e0a8004e;
+}
+
 .equipe-membros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
+    /* Ajusta a grade para caber mais itens e ser mais flexível */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 0;
 }
 
 #equipe li {
+    display: flex; /* Transforma o item em um contêiner flexível */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    
     background-color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    list-style: none; /* Remove a bolinha da lista */
 }
 
 #equipe li:hover {
-    transform: translateY(-10px);
-    border: 2px solid #ffc107; /* Borda amarela de destaque */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-12px); /* Efeito de elevação sutil */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border-top: 5px solid #ffc107; /* Borda de destaque na parte superior */
 }
 
 #equipe img {
@@ -347,68 +433,85 @@ footer .contato-icon-circle {
     height: 150px;
     border-radius: 50%; /* Torna a imagem circular */
     object-fit: cover;
-    margin-bottom: 15px;
-    /* border: 4px solid #ffc107; /* Borda amarela de destaque */
+    margin-bottom: 20px;
+    border: 4px solid #f4f4f4; /* Borda branca para destacar do fundo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra suave na imagem */
 }
 
-#equipe p{
-    margin: 0;
+#equipe h4 {
+    font-size: 1.6em;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+#equipe p {
+    margin: 5px 0;
     font-size: 1em;
     color: #555;
 }
 
-/* Estilo para o link social */
-.social-link {
+#equipe p strong {
+    color: #e0a800; /* Destaque na cor do cargo */
+    font-weight: 600;
+}
+
+/* Estilos para o Rodapé */
+.footer {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 30px;
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    gap: 20px;
+}
+
+.social-links a {
     color: #fff;
     font-size: 24px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Estilo específico para o Instagram */
-.social-link.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.social-links a:hover {
+    color: #e0a800; /* Cor de destaque ao passar o mouse */
+    transform: translateY(-5px);
 }
 
-/* Efeito de hover */
-.social-link.instagram:hover {
-    transform: scale(1.1);
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
 }
 
-/* Estilo para o Rodapé */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0;
-}
-
-a{
-    color: #a0a1b5;
+.footer-info a {
+    color: #f4f4f4;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-a:hover{
+.footer-info a:hover {
     color: #e0a800;
-    text-decoration: none;
 }
 
-a img {
-    width: 80px;
-    height: 80px;
-    vertical-align: middle;
-    margin-right: 1px;
-}
-
-@media (max-width: 768px) {
-    /* 🍔 Menu Hambúrguer */
+@media (max-width: 1164px) {
+    /* Menu Hamburger */
     .main-nav {
+        color: #101010;
         flex-direction: row;
         justify-content: space-between;
         padding: 15px 10px;
@@ -417,7 +520,7 @@ a img {
     .main-nav ul {
         display: none; /* Esconde o menu de navegação padrão */
         flex-direction: column;
-        background-color: #007bff;
+        background-color: #e0a800;
         position: absolute;
         top: 0;
         left: -100%;
@@ -425,6 +528,24 @@ a img {
         height: 60vh;
         padding-top: 40px;
         transition: left 0.3s ease-in-out;
+    }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+    .mascote-header {
+        /* display: none; */
+        max-width: 400px; /* Define um tamanho máximo para a imagem */
+    }
+
+    .mascote-problema {
+        display: none;
     }
 
     .main-nav ul.active {
@@ -436,9 +557,9 @@ a img {
         display: block;
     }
 
-    /* 🖼️ Cabeçalho */
+    /* Cabeçalho */
     header {
-        padding: 100px 20px;
+        padding: 0px 20px;
     }
 
     header h1 {
@@ -458,7 +579,7 @@ a img {
         font-size: 1em;
     }
 
-    /* 📝 Seções */
+    /* Seções */
     section {
         padding: 50px 20px;
     }
@@ -479,9 +600,118 @@ a img {
         grid-template-columns: 1fr;
     }
 
-    .contato-container {
+    .contato-item {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+    #contato {
+        padding: 50px 20px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 974px) {
+    /* Menu Hamburger */
+    .main-nav {
+        color: #101010;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 10px;
+    }
+
+    .main-nav ul {
+        display: none; /* Esconde o menu de navegação padrão */
+        flex-direction: column;
+        background-color: #e0a800;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 60vh;
+        padding-top: 40px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .mascote-header {
+        /* display: none; */
+        max-width: 400px; /* Define um tamanho máximo para a imagem */
+    }
+
+    .mascote-problema {
+        display: none;
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada via JS */
+        left: 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Cabeçalho */
+    header {
+        padding: 0px 20px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .btn-cta {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+
+    /* Seções */
+    section {
+        padding: 50px 20px;
+    }
+
+    section h3 {
+        font-size: 1.5em;
+    }
+
+    .objetivo-content {
+        flex-direction: column;
+    }
+
+    .objetivo-text {
+        max-width: 100%;
+    }
+
+    .equipe-membros {
+        grid-template-columns: 1fr;
     }
 
     .contato-item {
@@ -489,11 +719,148 @@ a img {
         align-items: center;
         text-align: center;
     }
+    #contato {
+        padding: 50px 20px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 973px) {
+    /* Menu Hamburger */
+    .main-nav {
+        color: #101010;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 10px;
+    }
+
+    .main-nav ul {
+        display: none; /* Esconde o menu de navegação padrão */
+        flex-direction: column;
+        background-color: #e0a800;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 60vh;
+        padding-top: 40px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .mascote-header {
+        display: none; 
+    }
+
+    .mascote-problema {
+        display: none;
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada via JS */
+        left: 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Cabeçalho */
+    header {
+        padding: 0px 20px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .btn-cta {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+
+    /* Seções */
+    section {
+        padding: 50px 20px;
+    }
+
+    section h3 {
+        font-size: 1.5em;
+    }
+
+    .objetivo-content {
+        flex-direction: column;
+    }
+
+    .objetivo-text {
+        max-width: 100%;
+    }
+
+    .equipe-membros {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #contato {
+        padding: 50px 20px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .main-nav {
         padding: 10px 15px;
+    }
+
+    header img {
+        display: none;
+    }
+
+    .mascote-problema {
+        display: none;
     }
 
     header {
@@ -531,5 +898,21 @@ a img {
 
     .funcionalidade-item h4 {
         font-size: 1.2em;
+    }
+
+    #contato {
+        padding: 50px 20px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 10px;
     }
 }
