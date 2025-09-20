@@ -12,7 +12,7 @@ body {
 }
 
 .main-nav {
-    background-color: #007bff;
+    background-color: #e0a800;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -35,16 +35,16 @@ body {
 
 .main-nav li a {
     display: block;
-    padding: 15px 20px;
+    padding: 15px 10px;
     text-decoration: none;
-    color: #fff;
+    color: #333;
     font-weight: 600;
     transition: background-color 0.3s ease;
     border-radius: 10px;
 }
 
 .main-nav li a:hover {
-    background-color: #0056b3;
+    background-color: #ffc107;
     border-radius: 10px;
 }
 
@@ -78,21 +78,18 @@ section {
 
 /* Estilo para o cabeçalho */
 header {
-    background-image: url('../images/fundo_logo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    padding: 400px;
+    background-color: #ffc10786; /* Cor de fundo azul */
+    color: #333; /* Cor do texto */
+    padding: 50px;
     text-align: center;
 }
 
 /* Estilo para a imagem do cabeçalho (logo) */
-.logo-header {
-    max-width: 200px;
+.logo {
+    max-width: 50px;
+    margin-right: 20px;
     width: 80%;
     height: auto;
-    margin-bottom: 20px;
 }
 
 header h1 {
@@ -111,32 +108,51 @@ header h2 {
 
 header p {
     font-size: 1.2em;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 700px;
 }
 
 /* Botão de Chamada para Ação (CTA) */
 .btn-cta {
     display: inline-block;
-    background-color: #ffc107; /* Cor de destaque - amarelo */
-    color: #333;
-    padding: 15px 30px;
+    background-color: #333; /* Cor de destaque - amarelo */
+    color: #fff;
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 10px;
     font-weight: 600;
-    margin-top: 40px;
+    font-size: 12px;
     transition: background-color 0.3s ease;
 }
 
 .btn-cta:hover {
-    background-color: #493701; /* Escurece a cor no hover */
+    background-color: #101010; /* Escurece a cor no hover */
+    color: #fff;
+}
+
+.btn-cta-inicio  {
+    display: inline-block;
+    background-color: #333; /* Cor de destaque - amarelo */
+    color: #fff;
+    padding: 15px 30px;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta-inicio:hover {
+    background-color: #101010; /* Escurece a cor no hover */
+    color: #fff;
 }
 
 /* Estilo para as seções */
 section h3 {
     font-size: 2em;
     margin-bottom: 30px;
-    color: #007bff; /* Título das seções em azul */
+    color: #101010; /* Título das seções em azul */
 }
 
 section ul {
@@ -251,7 +267,7 @@ section li {
 }
 
 #equipe {
-    background-color: #e9ecef;
+    background-color: #e0a8004e;
 }
 
 #contato {
@@ -277,7 +293,7 @@ section li {
     text-align: left;
 }
 
-.contato-icon-circle {
+footer .contato-icon-circle {
     background-color: #007bff;
     color: #fff;
     width: 60px;
@@ -308,7 +324,7 @@ section li {
 /* Estilo para a seção de Equipe (com fotos) */
 .equipe-membros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 30px;
 }
 
@@ -322,6 +338,7 @@ section li {
 
 #equipe li:hover {
     transform: translateY(-10px);
+    border: 2px solid #ffc107; /* Borda amarela de destaque */
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
@@ -331,14 +348,13 @@ section li {
     border-radius: 50%; /* Torna a imagem circular */
     object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid #ffc107; /* Borda amarela de destaque */
+    /* border: 4px solid #ffc107; /* Borda amarela de destaque */
 }
 
-/* Estilo para o contêiner do ícone e texto */
-.contato-info {
-    display: flex;
-    align-items: center; /* Alinha verticalmente o ícone e o texto */
-    gap: 15px; /* Adiciona um espaço entre o texto e o ícone */
+#equipe p{
+    margin: 0;
+    font-size: 1em;
+    color: #555;
 }
 
 /* Estilo para o link social */
@@ -383,134 +399,11 @@ a:hover{
     text-decoration: none;
 }
 
-
-@media (max-width: 1820px) {
-    .main-nav {
-        padding: 15px 10px;
-    }
-
-    header {
-        padding: 200px 15px;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header h2 {
-        font-size: 1em;
-    }
-
-    header p {
-        font-size: 0.9em;
-    }
-
-    .btn-cta {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-
-    section h3 {
-        font-size: 1.3em;
-    }
-
-    .funcionalidade-item {
-        padding: 20px;
-    }
-
-    .funcionalidade-item h4 {
-        font-size: 1.2em;
-    }
-}
-
-@media (max-width: 980px) {
-    .main-nav {
-        padding: 15px 10px;
-    }
-
-    header {
-        padding: 200px 15px;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header h2 {
-        font-size: 1em;
-    }
-
-    header p {
-        font-size: 0.9em;
-    }
-
-    .btn-cta {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-
-    section h3 {
-        font-size: 1.3em;
-    }
-
-    .funcionalidade-item {
-        padding: 20px;
-    }
-
-    .funcionalidade-item h4 {
-        font-size: 1.2em;
-    }
-}
-
-@media (max-width: 880px) {
-    .main-nav {
-        padding: 15px 10px;
-    }
-
-    header {
-        padding: 200px 15px;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header h2 {
-        font-size: 1em;
-    }
-
-    header p {
-        font-size: 0.9em;
-    }
-
-    .btn-cta {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-
-    section h3 {
-        font-size: 1.3em;
-    }
-
-    .funcionalidade-item {
-        padding: 20px;
-    }
-
-    .funcionalidade-item h4 {
-        font-size: 1.2em;
-    }
+a img {
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    margin-right: 1px;
 }
 
 @media (max-width: 768px) {
@@ -518,7 +411,7 @@ a:hover{
     .main-nav {
         flex-direction: row;
         justify-content: space-between;
-        padding: 15px 20px;
+        padding: 15px 10px;
     }
 
     .main-nav ul {
@@ -529,8 +422,8 @@ a:hover{
         top: 0;
         left: -100%;
         width: 100%;
-        height: 100vh;
-        padding-top: 80px;
+        height: 60vh;
+        padding-top: 40px;
         transition: left 0.3s ease-in-out;
     }
 
